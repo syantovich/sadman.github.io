@@ -1,0 +1,138 @@
+@import url(normalize.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body{
+    margin:0px;
+    font-family: Roboto;
+    font-weight: 300;
+    background: linear-gradient(45deg, rgb(48, 168, 204) 25%, rgb(36, 141, 145) 38%, rgb(7, 60, 234) 67%);
+}
+p{
+    margin: 0px;
+}
+.inform {
+    margin-top: 5vh;
+    width:100%;
+    min-width: 95vw;
+    max-height:85vh;
+    background-color:white
+}
+.moreinfo{display: flex;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.but button{
+    border-radius:20px;
+    background:rgb(156, 136, 110)
+}
+.nameinf{
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+.namelesa,.l{
+    display:flex;
+}
+.namelesa div,.l div{
+    border-right: solid 2px;
+    border-bottom: solid 2px;
+    padding:2px;
+    width:100px;
+    font-size: 15px;
+    text-align: center;
+}
+.namelesa div{
+    font-weight: bold;
+}
+.inform{
+    overflow: scroll;
+}
+.first{
+    width: 200px !important;
+    text-align:left!important ;
+}
+.second{
+    width: 100px !important;
+}
+.les{display: flex;
+flex-wrap: wrap;}
+.add, .perem,.addObj,.delObj,.addotv,.addtipinstr,.addinstrotv,.showNumber,.perem{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+.add .main,.perem .main,.addObj .main,.delObj .main,.addotv .main,.addtipinstr .main,.showNumber .main,.addinstrotv .main,.perem .main{
+    width: 400px;
+    height: auto;
+    background-color:rgba(214, 165, 41, 1);
+    position: relative;
+}
+.add .localmain div,.addotv .localmain div, .addtipinstr .localmain div , .showNumber .localmain div,.addinstrotv .localmain div,.perem .localmain div{
+    margin-left: 40px;
+}
+.cross{
+    width:40px;
+    border-top: black 1px solid;
+}
+.maincross{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    top:20px;
+}
+#cross1{
+    transform: rotate(45deg);
+}
+#cross2{
+    transform: rotate(135deg);
+}
+.pad{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.peremSubm{
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.addObj .main,.delObj .main,.addotv .main,.addtipinstr .main{
+    padding: 10px;
+}
+.addObj input{
+    margin-bottom: 10px;
+}
+.delObj input{
+    margin-top: 10px;
+}
+.delObj .main{
+    padding:20px;
+}
+.instrOtv{
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    border-bottom:black 0.5px solid;
+    border-right:black 0.5px solid;
+}
+.but button{
+    margin: 5px;
+}
+

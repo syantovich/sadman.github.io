@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/lesa.css">
+</head>
+
+<body>
+    <div class="center">
+        <div class="add nnone">
+            <div class="main">
+                <div>
+                    <select id="select">
+                    </select>
+                </div>
+                <div class="localmain"></div>
+                <div class="maincross">
+                    <div class="cross" id="cross1"></div>
+                    <div class="cross" id="cross2"></div>
+                </div>
+                <div class="del"></div>
+            </div>
+        </div>
+        <div class="perem nnone">
+            <div class="main">
+                <div class="pad">
+                    <p>От Кого</p>
+                    <select id="ot">
+                    </select>
+                    <br>
+                </div>
+                <div class="pad">
+                    <p>Кому</p>
+                    <select id="kud">
+                    </select>
+                    <br>
+                </div>
+                <div class="pad">
+                    <p>Тип лесов</p>
+                    <select id="tip">
+                    </select>
+                    <br>
+                </div>
+                <div class="localmain"></div>
+                <div class="maincross">
+                    <div class="cross" id="cross1"></div>
+                    <div class="cross" id="cross2"></div>
+                </div>
+                <input type="submit" class="peremSubm" value="Переместить">
+
+            </div>
+        </div>
+        <div class="addObj nnone">
+            <div class="main">
+                <div>
+                    <p>Имя обьекта</p>
+                    <input type="text" id="addName">
+                </div>
+                <div>
+                    <p>Имя ответственного</p>
+                    <input type="text" id="addFam">
+                </div>
+                <div class="maincross">
+                    <div class="cross" id="cross1"></div>
+                    <div class="cross" id="cross2"></div>
+                </div>
+                <input type="submit" class="addObjButt" value="Переместить">
+
+            </div>
+        </div>
+        <div class="delObj nnone">
+            <div class="main">
+                <div>
+                    <p>Какой обьекто удалить?</p>
+                    <select id="delObj"></select>
+                </div>
+                <div class="maincross">
+                    <div class="cross" id="cross1"></div>
+                    <div class="cross" id="cross2"></div>
+                </div>
+                <input type="submit" class="delObjButt" value="Удалить обьект">
+
+            </div>
+        </div>
+
+        <div class="inform">
+            <div class="nameinf">Наличие лесов</div>
+            <div class="moreinfo wrap">
+                <div class="nameobj">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="tur les">
+                    <div class="namelesa">
+                        <div class="first name">Комплектация вышки тур</div>
+                        <div class="second">Кол-во</div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Гантель базы</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Стяжка базы</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Лестница</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Стяжка секции</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Ганетль секции</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Настил слюком</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Настил без люка</div>
+                        <div class="sum"></div>
+                    </div>
+                </div>
+                <div class="LSPR  les">
+                    <div class="namelesa">
+                        <div class="first name">Ком-ция рамных лесов ЛСПР-300</div>
+                        <div class="second">Кол-во</div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Рама с лестницей</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Рама без лестницы</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Диагональная связь сдвоенная</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Горизонтальная связь сдвоенная</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Ригель</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Настил</div>
+                        <div class="sum"></div>
+                    </div>
+                </div>
+                <div class="turVSP les">
+                    <div class="namelesa">
+                        <div class="first name">Ком-ция вышки тур ВСП-250/0,7</div>
+                        <div class="second">Кол-во</div>
+                    </div>
+                    <div class="l">
+                        <div class="first">База в сборе 2000мм</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Объемная диагональ 1765мм</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Лестница секции 780*1200</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Ганетль 1595мм</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Стяжка лестницы 740мм</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Лестница ограждения 780*1200</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Ганетль ограждения 1590мм</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Стяжка секции ограждения 740мм</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Перекладина ограждения 1580мм</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Настил с люком 650*1630мм</div>
+                        <div class="sum"></div>
+                    </div>
+                </div>
+                <div class="turAtlant les">
+                    <div class="namelesa">
+                        <div class="first name">Ком-ция вышки тур Атлант</div>
+                        <div class="second">Кол-во</div>
+                    </div>
+                    <div class="l">
+                        <div class="first">База Атланта в сборе</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Стабилизатор базы</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Лестница</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Диагональ (на каждые 10 м высоты)</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Настил с люком широкий</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Настил без люка узкий</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Настил без люка узкий</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Ограждение боковое верхнее</div>
+                        <div class="sum"></div>
+                    </div>
+                </div>
+                <div class="homut les">
+                    <div class="namelesa">
+                        <div class="first name">Ком-ция лесов хомутовых</div>
+                        <div class="second">Кол-во</div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Стойка 4,2м (ЛСПХ-40)</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Стойка 4,2м (ЛСПХ-40)</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Свзяь 3,7м (ЛСПХ-40)</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Поперечина 1,25м</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Башмак (универсальный)</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Хомут неповоротный</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Хомут поворотный (ЛСПХ-40)</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Настил деревянный 500*1500</div>
+                        <div class="sum"></div>
+                    </div>
+                    <div class="l">
+                        <div class="first">Лестница (2,2м)</div>
+                        <div class="sum"></div>
+                    </div>
+                </div>
+            </div>
+
+    
+        </div>
+        <div class="but">
+            <button id="addbut">Добавить или удалить леса</button>
+            <button id="perem">Переместить леса</button>
+            <button id="objadd">Добавить обьект</button>
+            <button id="objdell">Удалить обьект</button>
+        </div>
+    </div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/lesa.js"></script>
+
+</body>
+
+</html>

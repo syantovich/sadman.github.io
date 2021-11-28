@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/lesa.css">
+</head>
+
+<body>
+    <div class="center">
+        <div class="addotv nnone">
+            <div class="main">
+                <div class="localmain">
+                    <p style="margin-top:30px">Имя ответственного <input type="text" class="name"></p>
+                    <input type="submit" value="Добавить ответственного" style="margin-top:15px" id="addotv">
+                    <p style="margin-top:30px">Имя ответственного <select class="delotv"></select></p>
+                    <input type="submit" value="Удалить ответственного" style="margin-top:15px" id="delotvsub">
+                </div>
+                <div class="maincross">
+                    <div class="cross" id="cross1"></div>
+                    <div class="cross" id="cross2"></div>
+                </div>
+                <div class="del"></div>
+            </div>
+        </div>
+        <div class="addtipinstr nnone">
+            <div class="main">
+                <div class="localmain">
+                    <p style="margin-top:30px">Название инструмента <input type="text" class="name"></p>
+                    <input type="submit" value="Добавить тип инструмента" style="margin-top:15px" id="addtip">
+                    <p style="margin-top:30px">Название инструмента <select class="deltipinstr"></select></p>
+                    <input type="submit" value="Удалить тип инструмента" style="margin-top:15px" id="deltipinstrsub">
+                </div>
+                <div class="maincross">
+                    <div class="cross" id="cross1"></div>
+                    <div class="cross" id="cross2"></div>
+                </div>
+                <div class="del"></div>
+            </div>
+        </div>
+        <div class="perem nnone">
+            <div class="main">
+                <div class="pad">
+                    <p>От Кого</p>
+                    <select id="ot">
+                    </select>
+                    <br>
+                </div>
+                <div class="pad">
+                    <p>Кому</p>
+                    <select id="kud">
+                    </select>
+                    <br>
+                </div>
+                <div class="pad">
+                    <p>Тип инструмента</p>
+                    <select id="tip">
+                    </select>
+                    <br>
+                </div>
+                <div class="pad">
+                    <p>Ремонтные?</p>
+                    <input type="checkbox" id="checkbox">
+                </div>
+                <div class="pad">
+                    <p>Переместить в ремонт?</p>
+                    <input type="checkbox" id="inremcheckbox">
+                </div>
+                <div class="pad">
+                    <p>Какой номер инструмента</p>
+                    <select id="number">
+                    </select>
+                    <br>
+                </div>
+                <div class="localmain"></div>
+                <div class="maincross">
+                    <div class="cross" id="cross1"></div>
+                    <div class="cross" id="cross2"></div>
+                </div>
+                <input type="submit" class="peremSubm" value="Переместить">
+
+            </div>
+        </div>
+        <div class="addinstrotv nnone">
+            <div class="main">
+                <div class="pad">
+                    <p>Кому добавляем инструмент?</p>
+                    <select id="otvaddinstr"></select>
+                </div>
+                <div class="pad">
+                    <p>Какой тип инструмент?</p>
+                    <select id="tipaddinstr"></select>
+                </div>
+                <div class="pad">
+                    <p>Номер инструмента</p>
+                    <input type="text" id="numberaddinstr">
+                </div>
+                <div class="maincross">
+                    <div class="cross" id="cross1"></div>
+                    <div class="cross" id="cross2"></div>
+                </div>
+                <input type="submit" class="addinstr pad" value="Добавить инструмент">
+                <div class="pad">
+                    <p>Номер инструмента</p>
+                    <select id="delinst"></select>
+                    <input type="submit" class="delinst pad" value="Удалить инструмент">
+                </div>
+
+
+            </div>
+        </div>
+        <div class="inform">
+            <div class="nameinf">Наличие инструмента</div>
+            <div class="moreinfo"></div>
+        </div>
+        <div class="but">
+            <button id="addotvbut">Добавить / удалить ответственного</button>
+            <button id="addtipbut">Добавить / удалить тип инструмента</button>
+            <button id="pereminstrbut">Переместить инструмент</button>
+            <button id="addinstrotvbut">Добавить инструмент ответственному лицу</button>
+        </div>
+    </div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/instr.js"></script>
+</body>
+
+</html>
