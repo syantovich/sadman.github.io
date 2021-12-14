@@ -4,7 +4,8 @@ var firstvers;
 var otv;
 var tipInstr;
 var ajaxHandlerScript="https://fe.it-academy.by/AjaxStringStorage2.php";
-var updatePassword=Math.random();
+var updatePassword=5789485;
+var updatePassword1=45321554;
 var otvName='SYANTOVICH_SADMAN_OTV';
 var lesaName="SYANTOVICH_SADMAN_LESA";
 var tipInstrName="SYANTOVICH_SADMAN_TIP";
@@ -16,20 +17,11 @@ $.ajax( {
     data : { f : 'READ', n : otvName},
     success : function(x){
         console.log(x);
-        otv=JSON.parse(x.result);
-        $.ajax( {
-            url : ajaxHandlerScript, type : 'POST', cache : false, dataType:'json',
-            data : { f : 'READ', n : tipInstrName},
-            success : function(x){
-                console.log(x);
-                tipInstr=JSON.parse(x.result);
-                
-                start1();
-            }, error : function(){
-                console.log(-3);
-            }
-        }
-        );
+        let y=JSON.parse(x.result);
+        console.log(y);
+        otv=y[0];
+        tipInstr=y[1];
+        start1();   
     }, error : function(){
         console.log(-3);
     }
@@ -43,10 +35,13 @@ function start1(){
             success : function(){
                 $.ajax( {
                     url : ajaxHandlerScript, type : 'POST', cache : false, dataType:'json',
-                    data : { f : 'UPDATE', n : otvName, v : JSON.stringify(otv), p : updatePassword },
+                    data : { f : 'UPDATE', n : otvName, v : JSON.stringify([otv,tipInstr]), p : updatePassword },
                     success:function(){
+
                         showInBrowser();
-                    }
+
+                    },
+                    error:function (){console.log(-5);updateOtv();}
                 }
             );
             }, error : function(){
@@ -58,11 +53,11 @@ function start1(){
     function updateTip(){
         $.ajax( {
             url : ajaxHandlerScript, type : 'POST', cache : false, dataType:'json',
-            data : { f : 'LOCKGET', n : tipInstrName,p:updatePassword },
+            data : { f : 'LOCKGET', n : tipInstrName,p:updatePassword1 },
             success : function(){
                 $.ajax( {
                     url : ajaxHandlerScript, type : 'POST', cache : false, dataType:'json',
-                    data : { f : 'UPDATE', n : tipInstrName, v : JSON.stringify(tipInstr), p : updatePassword },
+                    data : { f : 'UPDATE', n : tipInstrName, v : JSON.stringify(tipInstr), p : updatePassword1 },
                     success:function(){
                         showInBrowser();
                     }
@@ -210,7 +205,6 @@ function start1(){
         if(value!=""){
             otv.splice(value,1);
         delotvopt();
-        updateTip();
         updateOtv();
         }
         
@@ -242,7 +236,6 @@ function start1(){
             otv.unshift(newObj);
             addNewInstr();
             delotvopt();
-            updateTip();
             updateOtv();
             buttaddotv.parentNode.querySelector(".name").value="";
         }
@@ -254,7 +247,6 @@ function start1(){
         if(addtiptext){
             tipInstr.push(addtiptext);
             addNewInstr();
-            updateTip();
             updateOtv();
         }
         document.querySelector(".addtipinstr").querySelector("input").value="";
@@ -268,6 +260,7 @@ function start1(){
     let addtipbut=document.querySelector("#addtipbut");
         addtipbut.addEventListener("click",()=>{
         dispnone();
+        delotvopt();
         document.querySelector(".addtipinstr").style.display="flex  ";
     });
     function deltipopt(){
@@ -304,7 +297,6 @@ function start1(){
     deltipinstrsub.addEventListener("click",()=>{
         deltip();
         deltipopt();
-        updateTip();
         updateOtv();
     });
     
@@ -374,7 +366,6 @@ function start1(){
             console.log(otv[ot]);
             otv[kud][inrem][tipInstr[tip]].unshift(otv[ot][type][tipInstr[tip]][number]);
             otv[ot][type][tipInstr[tip]].splice(number,1);
-            updateTip();
             updateOtv();
             peremNumberinstr();
         }
@@ -403,9 +394,34 @@ function start1(){
         }); */
     let perembut=document.querySelector("#pereminstrbut");
     perembut.addEventListener("click",()=>{
+        peremOtvOption();
+        peremNumberinstr();
         dispnone();
         document.querySelector(".perem").style.display="flex";
     });
+    let addMain=document.querySelector(".addinstrotv");
+        let otvaddinstr=addMain.querySelector("#otvaddinstr");
+        let tipaddinstr=addMain.querySelector("#tipaddinstr");
+        let numberDel=addMain.querySelector("#delinst");
+        otvaddinstr.addEventListener("change",()=>{
+            numberupdate();
+        });
+        tipaddinstr.addEventListener("change",()=>{
+            numberupdate();
+        });
+    function numberupdate(){
+        let addMain=document.querySelector(".addinstrotv");
+        let otvaddinstr=addMain.querySelector("#otvaddinstr");
+        let tipaddinstr=addMain.querySelector("#tipaddinstr");
+        let numberDel=addMain.querySelector("#delinst");
+        numberDel.innerHTML="";
+        console.log(tipInstr[tipaddinstr.value]);
+           for (let i=0;i<otv[otvaddinstr.value].instr[tipInstr[tipaddinstr.value]].length;i++){
+            let newOpt=document.createElement("option");
+            newOpt.innerHTML=otv[otvaddinstr.value].instr[tipInstr[tipaddinstr.value]][i];
+            newOpt.value=i;
+            numberDel.appendChild(newOpt);
+        }}
     function addNumInstrOtv(){
         let addMain=document.querySelector(".addinstrotv");
         let otvaddinstr=addMain.querySelector("#otvaddinstr");
@@ -413,6 +429,7 @@ function start1(){
         let numberDel=addMain.querySelector("#delinst");
         tipaddinstr.innerHTML="";
         otvaddinstr.innerHTML="";
+        numberDel.innerHTML="";
         for(let i=0;i<otv.length;i++){
             let newOpt=document.createElement("option");
             newOpt.innerHTML=otv[i].name;
@@ -425,19 +442,13 @@ function start1(){
             newOpt.value=i;
             tipaddinstr.appendChild(newOpt);
         }
-        delNum();
-    }
-    function delNum(){
-        let addMain=document.querySelector(".addinstrotv");
-        let otvaddinstr=addMain.querySelector("#otvaddinstr");
-        let tipaddinstr=addMain.querySelector("#tipaddinstr");
-        let numberDel=addMain.querySelector("#delinst");
-        for(let i=0;i<otv[otvaddinstr.value]["instr"][tipInstr[tipaddinstr.value]].length;i++){
-            let newOpt=document.createElement("option");
-            newOpt.innerHTML=otv[otvaddinstr.value]["instr"][tipInstr[tipaddinstr.value]];
-            newOpt.value=i;
-            numberDel.appendChild(newOpt);
-        }
+        
+        
+        numberupdate();
+
+        
+
+
     }
     addNumInstrOtv();
     function add(){
@@ -448,23 +459,33 @@ function start1(){
         if(numder){
             otv[otvaddinstr]["instr"][tipInstr[tipaddinstr]].unshift(numder);
         }
-        updateTip();
         updateOtv();
+        numberupdate();
     }
     function del(){
         let addMain=document.querySelector(".addinstrotv");
         let otvaddinstr=addMain.querySelector("#otvaddinstr").value;
         let tipaddinstr=addMain.querySelector("#tipaddinstr").value;
-        let numder=addMain.querySelector("#numberaddinstr").value;
+        let numder=addMain.querySelector("#delinst").value;
         if(numder){
-            otv[otvaddinstr]["instr"][tipInstr[tipaddinstr]].unshift(numder);
+            otv[otvaddinstr]["instr"][tipInstr[tipaddinstr]].splice(numder,1);
         }
-        updateTip();
         updateOtv();
+        numberupdate();
     }
     let butAddinstr=document.querySelector(".addinstr");
     butAddinstr.addEventListener("click",()=>{
         add();
+    });
+    delbut=document.querySelector(".delinst");
+    delbut.addEventListener("click",()=>{
+        del();
+    });
+    document.querySelector("#addinstrotvbut").addEventListener("click",()=>{
+        dispnone();
+        numberupdate();
+        addNumInstrOtv();
+        document.querySelector(".addinstrotv").style.display="flex";
     });
     /* unload(); */
     /* load(); */

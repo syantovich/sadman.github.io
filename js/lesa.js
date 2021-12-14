@@ -146,7 +146,7 @@ function start(){
             let newDiv = document.createElement("div");
             newDiv.innerHTML = `<span>${first.innerHTML}</span> :<br><input type="number" class="inp">`;
             main.appendChild(newDiv);
-        }
+        }   
         let newDiv = document.createElement("div")
         let selobj = document.createElement("select");
         selobj.id = "idobj";
@@ -164,7 +164,7 @@ function start(){
         newDiv.innerHTML = "<br><input type='submit' id='subAdd' value='Добавить леса'>";
         main.appendChild(newDiv);
         newDiv = document.createElement('div');
-        newDiv.innerHTML = "<br><input type='submit' id='subdel' value='Удвлить леса'>";
+        newDiv.innerHTML = "<br><input type='submit' id='subdel' value='Удалить леса'>";
         main.appendChild(newDiv);
         let subAdd = document.querySelector("#subAdd");
         subAdd.addEventListener("click", () => {
