@@ -208,7 +208,9 @@ function start(){
         let main = document.querySelector(".perem").querySelector(".localmain");
         main.innerHTML = "";
         main.style.margin = "20px 0px 20px 20px";
-    
+    selot.innerHTML="";
+    selkud.innerHTML="";
+    seltip.innerHTML="";
         for (let i = 0; i < lesa.length; i++) {
             let opt = document.createElement("option");
             opt.innerHTML = lesa[i].nameObj + " - " + lesa[i].famOtv;
