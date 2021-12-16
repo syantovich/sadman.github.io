@@ -14,7 +14,7 @@ p{
     margin-top: 5vh;
     width:100%;
     min-width: 95vw;
-    max-height:85vh;
+    max-height:75vh;
     background-color:white
 }
 .moreinfo{display: flex;
