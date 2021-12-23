@@ -104,9 +104,21 @@ function start1(){
             if (i == -1) {
                 continue;
             }
-    
-            newDiv.innerHTML = tipInstr[i];
-    
+    let lastNum=0;
+    let Arr=[];
+            for(let j=0;j<otv.length;j++){
+                Arr.push(...otv[j].instr[tipInstr[i]]);
+                let x=parseInt("a4r t 4r43 43a b345b 123 cc gaeg4".replace(/\D+/g,""));
+
+            }
+            for(let j=0;j<Arr.length;j++){
+                console.log(parseInt(Arr[j].replace(/\D+/g,"")));
+                lastNum=Math.max(lastNum,parseInt(Arr[j].replace(/\D+/g,"")));
+            }
+            lastNum++;
+            console.log(Arr);
+            newDiv.innerHTML = tipInstr[i]+"<br><br> След номер "+lastNum;
+            console.log(tipInstr[i]);
         }
     
     
